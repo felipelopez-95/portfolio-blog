@@ -1,0 +1,21 @@
+---
+import Nav from "./Nav.astro";
+import Social from "./Social.astro";
+---
+
+<header class="header">
+    <Nav />
+    <Social />
+</header>
+
+<style>
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        max-height: 56px;
+        position: relative;
+        z-index: 10;
+    }
+</style>
