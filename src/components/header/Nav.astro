@@ -3,7 +3,7 @@
 ---
 
 <nav>
-    <ul>
+    <ul id="nav">
         <li>
             <a href="#">Inicio</a>
         </li>
@@ -21,3 +21,35 @@
         </li>
     </ul>
 </nav>
+
+<style>
+    ul {
+        display: flex; /* Los pone en fila */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    li {
+        /* Aquí estilizas el "contenedor" del enlace */
+        background: var(--bg-elevated);
+        border-radius: 8px;
+        padding: 0.5rem;
+    }
+
+    a {
+        color: white;
+        font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+        ul {
+            align-items: flex-end;
+        }
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
+    }
+</style>

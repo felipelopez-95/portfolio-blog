@@ -1,10 +1,16 @@
 ---
+import Menu from "./Menu.astro";
 import Nav from "./Nav.astro";
 import Social from "./Social.astro";
 ---
 
 <header class="header">
-    <Nav />
+    <div class="button-menu">
+        <Menu />
+    </div>
+    <div class="nav-menu">
+        <Nav />
+    </div>
     <Social />
 </header>
 
@@ -18,4 +24,50 @@ import Social from "./Social.astro";
         position: relative;
         z-index: 10;
     }
+
+    .button-menu {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.show {
+        display: block;
+        position: absolute;
+        top: 56px; /* Ajusta según la altura de tu header */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        padding: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .button-menu {
+            display: none;
+        }
+
+        .nav-menu {
+            display: block;
+        }
+
+        .nav-menu.show {
+            position: static;
+            width: auto;
+            padding: 0;
+            display: block;
+            background-color: transparent;
+        }
+    }
 </style>
+
+<script>
+    const menu = document.querySelector("#menu");
+    const nav = document.querySelector(".nav-menu");
+
+    menu?.addEventListener("click", () => {
+        nav?.classList.toggle("show");
+        menu?.classList.toggle("is-active");
+    });
+</script>

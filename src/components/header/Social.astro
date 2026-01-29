@@ -1,23 +1,31 @@
 ---
-import githubIcon from '../../assets/social/github.svg'
-import linkedinIcon from '../../assets/social/linkedin.svg'
-import instagramIcon from '../../assets/social/instagram.svg'
+import githubIcon from "../../assets/social/github.svg";
+import linkedinIcon from "../../assets/social/linkedin.svg";
+import instagramIcon from "../../assets/social/instagram.svg";
 ---
 
 <div>
     <a href="#">
         <span>
-            <img src={githubIcon.src} alt="GitHub" width="24" height="24">
+            <img src={githubIcon.src} alt="GitHub" width="26" height="26" />
         </span>
     </a>
     <a href="#">
         <span>
-            <img src={linkedinIcon.src} alt="GitHub" width="24" height="24">
+            <img src={linkedinIcon.src} alt="GitHub" width="26" height="26" />
         </span>
     </a>
     <a href="#">
         <span>
-            <img src={instagramIcon.src} alt="GitHub" width="24" height="24">
+            <img src={instagramIcon.src} alt="GitHub" width="26" height="26" />
         </span>
     </a>
 </div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+    }
+</style>
