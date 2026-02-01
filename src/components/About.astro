@@ -1,3 +1,31 @@
 ---
-
+import profileImage from "../assets/me-1.png";
 ---
+
+<section id="intro" class="container">
+    <img src={profileImage.src} alt="profile" class="profile" />
+    <h1>Hola, soy Felipe Lopez</h1>
+    <p class="descript">
+        Desarrollador web con más de un año creando proyectos y aplicaciones.
+        Más de dos años trabajando con datos en marketing y ventas. Me motiva
+        construir soluciones que simplifiquen procesos y hagan el trabajo más
+        fácil.
+    </p>
+</section>
+
+<style>
+    .profile {
+        width: 100px;
+        border-radius: 50%;
+    }
+
+    .descript {
+        font-size: var(--text-xl);
+    }
+
+    @media (min-width: 768px) {
+        .descript {
+            max-width: 70%;
+        }
+    }
+</style>

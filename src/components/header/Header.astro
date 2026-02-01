@@ -21,8 +21,11 @@ import Social from "./Social.astro";
         justify-content: space-between;
         padding: 1rem;
         max-height: 56px;
-        position: relative;
-        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
     .button-menu {
@@ -36,7 +39,7 @@ import Social from "./Social.astro";
     .nav-menu.show {
         display: block;
         position: absolute;
-        top: 56px; /* Ajusta según la altura de tu header */
+        top: 56px;
         left: 0;
         width: 100%;
         background-color: var(--bg-primary);

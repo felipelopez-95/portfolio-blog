@@ -5,16 +5,13 @@
 <nav>
     <ul id="nav">
         <li>
-            <a href="#">Inicio</a>
-        </li>
-        <li>
             <a href="#">Proyectos</a>
         </li>
         <li>
             <a href="#">Expriencia</a>
         </li>
         <li>
-            <a href="#">Contacto</a>
+            <a href="#">Sobre mí</a>
         </li>
         <li>
             <a href="#">Blog</a>
@@ -24,32 +21,49 @@
 
 <style>
     ul {
-        display: flex; /* Los pone en fila */
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
     }
 
     li {
-        /* Aquí estilizas el "contenedor" del enlace */
-        background: var(--bg-elevated);
-        border-radius: 8px;
-        padding: 0.5rem;
+        background: rgba(30, 41, 59, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 99px;
+        transition: all 0.3s ease;
+    }
+
+    li:hover {
+        background: rgba(51, 65, 85, 0.9);
+        transform: translateY(-2px);
+        border-color: var(--accent-primary, #00d9ff);
     }
 
     a {
-        color: white;
-        font-weight: bold;
+        display: block;
+        padding: 0.5rem 0.8rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
     }
 
     @media (min-width: 768px) {
         ul {
-            align-items: flex-end;
+            flex-direction: row;
+            gap: 4px;
         }
 
-        a {
-            color: white;
-            font-weight: bold;
+        li {
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        li:hover {
+            background: rgba(30, 41, 59, 0.4);
+            transform: translateY(-1px);
         }
     }
 </style>
