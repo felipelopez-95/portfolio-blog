@@ -4,11 +4,12 @@ import linkedinIcon from "../../assets/social/linkedin.svg";
 import instagramIcon from "../../assets/social/instagram.svg";
 ---
 
-<div>
+<div class="social-list">
     <a
         href="https://github.com/felipelopez-95"
         target="_blank"
         rel="noopener noreferrer"
+        class="social-link"
     >
         <span>
             <img src={githubIcon.src} alt="GitHub" width="26" height="26" />
@@ -18,24 +19,31 @@ import instagramIcon from "../../assets/social/instagram.svg";
         href="https://www.linkedin.com/in/felipelopez95/"
         target="_blank"
         rel="noopener noreferrer"
+        class="social-link"
     >
         <span>
-            <img src={linkedinIcon.src} alt="GitHub" width="26" height="26" />
+            <img src={linkedinIcon.src} alt="LinkedIn" width="26" height="26" />
         </span>
     </a>
     <a
         href="https://www.instagram.com/felipelopez_95/"
         target="_blank"
         rel="noopener noreferrer"
+        class="social-link"
     >
         <span>
-            <img src={instagramIcon.src} alt="GitHub" width="26" height="26" />
+            <img
+                src={instagramIcon.src}
+                alt="Instagram"
+                width="26"
+                height="26"
+            />
         </span>
     </a>
 </div>
 
 <style>
-    div {
+    .social-list {
         display: flex;
         flex-direction: row;
         gap: 0.8rem;

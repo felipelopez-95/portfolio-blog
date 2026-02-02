@@ -3,29 +3,38 @@ import profileImage from "../assets/me-1.png";
 ---
 
 <section id="intro" class="container">
-    <img src={profileImage.src} alt="profile" class="profile" />
-    <h1>Hola, soy Felipe Lopez</h1>
-    <p class="descript">
-        Desarrollador web con más de un año creando proyectos y aplicaciones.
-        Más de dos años trabajando con datos en marketing y ventas. Me motiva
-        construir soluciones que simplifiquen procesos y hagan el trabajo más
-        fácil.
-    </p>
+    <div class="container-profile">
+        <img src={profileImage.src} alt="profile" class="profile" />
+        <h1>Hola, soy Felipe Lopez</h1>
+        <p class="descript">
+            Desarrollador web con más de un año creando proyectos y
+            aplicaciones. Más de dos años trabajando con datos en marketing y
+            ventas. Me motiva construir soluciones que simplifiquen procesos y
+            hagan el trabajo más fácil.
+        </p>
+    </div>
 </section>
 
 <style>
     .profile {
-        width: 100px;
+        width: 80px;
         border-radius: 50%;
+        margin: 0 0 1rem;
+    }
+
+    h1 {
+        font-size: var(--text-4xl);
+        margin: 0 0 1rem;
     }
 
     .descript {
         font-size: var(--text-xl);
+        font-weight: 500;
     }
 
     @media (min-width: 768px) {
-        .descript {
-            max-width: 70%;
+        .container-profile {
+            max-width: 36rem;
         }
     }
 </style>
