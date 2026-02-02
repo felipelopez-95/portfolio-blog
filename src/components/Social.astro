@@ -1,7 +1,7 @@
 ---
-import githubIcon from "../../assets/social/github.svg";
-import linkedinIcon from "../../assets/social/linkedin.svg";
-import instagramIcon from "../../assets/social/instagram.svg";
+import githubIcon from "../assets/social/github.svg";
+import linkedinIcon from "../assets/social/linkedin.svg";
+import instagramIcon from "../assets/social/instagram.svg";
 ---
 
 <div class="social-list">
@@ -12,8 +12,9 @@ import instagramIcon from "../../assets/social/instagram.svg";
         class="social-link"
     >
         <span>
-            <img src={githubIcon.src} alt="GitHub" width="26" height="26" />
+            <img src={githubIcon.src} alt="GitHub" width="18" height="18" />
         </span>
+        GitHub
     </a>
     <a
         href="https://www.linkedin.com/in/felipelopez95/"
@@ -22,8 +23,9 @@ import instagramIcon from "../../assets/social/instagram.svg";
         class="social-link"
     >
         <span>
-            <img src={linkedinIcon.src} alt="LinkedIn" width="26" height="26" />
+            <img src={linkedinIcon.src} alt="LinkedIn" width="18" height="18" />
         </span>
+        LinkedIn
     </a>
     <a
         href="https://www.instagram.com/felipelopez_95/"
@@ -35,10 +37,11 @@ import instagramIcon from "../../assets/social/instagram.svg";
             <img
                 src={instagramIcon.src}
                 alt="Instagram"
-                width="26"
-                height="26"
+                width="18"
+                height="18"
             />
         </span>
+        Instagram
     </a>
 </div>
 
@@ -46,6 +49,27 @@ import instagramIcon from "../../assets/social/instagram.svg";
     .social-list {
         display: flex;
         flex-direction: row;
-        gap: 0.8rem;
+        gap: 0.4rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.3rem 1rem;
+        border-radius: calc(infinity * 1px);
+        background-color: var(--bg-secondary);
+        box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .social-link span {
+        display: flex;
+        align-items: center;
+    }
+
+    @media (min-width: 768px) {
+        .social-list {
+            gap: 0.9rem;
+        }
     }
 </style>

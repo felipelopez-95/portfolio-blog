@@ -56,11 +56,12 @@ body {
     font-family: var(--font-family);
     color: var(--text-primary);
     background-color: var(--bg-primary);
-    line-height: 1.5;
 }
 
 p {
     font-size: var(--text-2xl);
+    line-height: 1.5;
+
 }
 
 a {
@@ -74,8 +75,8 @@ ul {
 
 .container {
     max-width: 80ch;
-    margin: 0 auto;
-    padding: 1rem 1rem;
+    margin: 5rem auto;
+    padding: 1rem;
 }
 
 @media (min-width: 768px) {

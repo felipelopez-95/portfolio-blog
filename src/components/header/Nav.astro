@@ -24,7 +24,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 8px;
+        gap: 0.5rem;
         padding: 0.7rem 1rem;
         margin: 0;
         list-style: none;
@@ -34,42 +34,13 @@
         background: var(--bg-secondary, #1a1a1a);
         border: 1px solid rgba(255, 255, 255, 0.03);
         border-radius: 10px;
-        transition: all 0.3s ease;
         box-shadow:
             0 4px 6px -1px rgba(0, 0, 0, 0.5),
             0 10px 15px -3px rgba(0, 0, 0, 0.4);
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    /* Animación que se activa al abrir el menú */
-    :global(.show) .nav-item {
-        animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes slideIn {
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    .nav-item:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-    .nav-item:nth-child(2) {
-        animation-delay: 0.15s;
-    }
-    .nav-item:nth-child(3) {
-        animation-delay: 0.2s;
-    }
-    .nav-item:nth-child(4) {
-        animation-delay: 0.25s;
     }
 
     .nav-item:hover {
         background: var(--bg-elevated, #252525);
-        transform: translateY(-3px) !important;
         box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.6);
         border-color: rgba(255, 255, 255, 0.1);
     }
@@ -80,7 +51,7 @@
         text-decoration: none;
         font-weight: 500;
         font-size: 1rem;
-        color: var(--text-primary, #e5e5e5);
+        color: var(--text-primary);
     }
 
     @media (min-width: 768px) {
@@ -94,19 +65,13 @@
             background: transparent;
             border: none;
             box-shadow: none;
-            opacity: 1;
-            transform: none;
             border-radius: 0;
-        }
-
-        :global(.show) .nav-item {
-            animation: none;
+            border-bottom: 2px solid transparent; /* Borde invisible para reservar el espacio */
+            transition: border-color 0.3s ease;
         }
 
         .nav-item:hover {
-            background: transparent;
-            transform: translateY(-2px) !important;
-            border-bottom: 2px solid var(--accent-primary);
+            border-color: var(--accent-primary);
         }
 
         .nav-link {
