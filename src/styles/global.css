@@ -1,21 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 
 :root {
-    /* Fondos */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --bg-elevated: #252525;
-
-    /* Acentos */
-    --accent-primary: #00d9ff;
+    --bg-primary: #f0f0f0;
+    --bg-secondary: #e5e5e5;
+    --bg-elevated: #ffffff;
+    --accent-primary: #0066cc;
     --accent-secondary: #10b981;
     --accent-tertiary: #f59e0b;
-
     /* Textos */
-    --text-primary: #e5e5e5;
-    --text-secondary: #a1a1a1;
-    --text-disabled: #6b7280;
-
+    --text-primary: #1a1a1a;
+    --text-secondary: #525252;
+    --text-disabled: #9ca3af;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --icon-filter: invert(1);
     /* Tipografía */
     --font-family: 'Onest', sans-serif;
     --font-weight-light: 300;
@@ -24,26 +21,37 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-
     /* Tamaños de fuente */
     --text-xs: 0.75rem;
-    /* 12px */
     --text-sm: 0.875rem;
-    /* 14px */
     --text-base: 1rem;
-    /* 16px */
     --text-lg: 1.125rem;
-    /* 18px */
     --text-xl: 1.25rem;
-    /* 20px */
     --text-2xl: 1.5rem;
-    /* 24px */
     --text-3xl: 1.875rem;
-    /* 30px */
     --text-4xl: 2.25rem;
-    /* 36px */
     --text-5xl: 3rem;
-    /* 48px */
+}
+
+html.dark {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #171717;
+    --bg-elevated: #262626;
+    --accent-primary: #00d9ff;
+    --accent-secondary: #34d399;
+    --accent-tertiary: #fbbf24;
+    --text-primary: #ededed;
+    --text-secondary: #a3a3a3;
+    --text-disabled: #525252;
+    --border-color: rgba(255, 255, 255, 0.05);
+    --icon-filter: invert(0);
+}
+
+/* Aplicar filtros a los iconos */
+.nav-logo-img img,
+.social-link img {
+    filter: var(--icon-filter);
+    transition: filter 0.3s ease;
 }
 
 * {
@@ -56,17 +64,32 @@ body {
     font-family: var(--font-family);
     color: var(--text-primary);
     background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Suaviza el cambio de tema */
 }
 
 p {
-    font-size: var(--text-2xl);
-    line-height: 1.5;
+    font-size: var(--text-base);
+    /* Corregido a base para lectura normal */
+    line-height: 1.6;
+    color: var(--text-secondary);
+    /* Los párrafos suelen ir mejor con secondary */
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    line-height: 1.2;
 }
 
 a {
     text-decoration: none;
     color: var(--text-primary);
+    transition: color 0.2s ease;
 }
 
 ul {
@@ -82,9 +105,7 @@ ul {
 @media (min-width: 768px) {
     .container {
         max-width: 90ch;
-
-        margin: 5rem auto;
-
+        margin: 6rem auto;
     }
 
     p {
