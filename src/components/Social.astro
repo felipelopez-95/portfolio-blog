@@ -49,7 +49,9 @@ import instagramIcon from "../assets/social/instagram.svg";
     .social-list {
         display: flex;
         flex-direction: row;
-        gap: 0.4rem;
+        flex-wrap: wrap;
+        row-gap: 0.6rem;
+        column-gap: 0.4rem;
     }
 
     .social-link {
@@ -59,7 +61,7 @@ import instagramIcon from "../assets/social/instagram.svg";
         padding: 0.3rem 1rem;
         border-radius: calc(infinity * 1px);
         background-color: var(--bg-secondary);
-        box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.4);
+        box-shadow: var(--box-shadow);
     }
 
     .social-link span {

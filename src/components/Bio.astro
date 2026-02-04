@@ -1,0 +1,130 @@
+---
+import Social from "./Social.astro";
+import iconBio from "../assets/icon-bio.svg";
+import aboutImage from "../assets/me-2.jpg";
+
+const edad = new Date().getFullYear() - 2001;
+---
+
+<section id="bio" class="container">
+    <h2 class="title-section">
+        <span>
+            <img src={iconBio.src} alt="Bio" width="32" height="32" />
+        </span>
+        Sobre mí
+    </h2>
+
+    <div class="bio-about">
+        <img src={aboutImage.src} alt="photo-about" class="photo-about" />
+
+        <div class="about-description">
+            <div class="about-decription-text">
+                <p>
+                    Me llamo <span class="highlighted"
+                        >Felipe Antonio López</span
+                    >, tengo <span class="highlighted">{edad}</span> años y soy de
+                    Ibagué, la ciudad musical de Colombia. <span
+                        class="highlighted">Soy programador</span
+                    > web, formado en el
+                    <a
+                        href="https://itfip.edu.co/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="u-link">ITFIP</a
+                    >, y comencé mi camino profesional en <span
+                        class="highlighted">Claro Colombia</span
+                    >, donde realicé mis prácticas y obtuve una visión más clara
+                    del área IT.
+                </p>
+                <p>
+                    Luego entré al mundo del marketing, trabajando en <span
+                        class="highlighted"
+                        >estrategias de ventas, funnels y automatización</span
+                    > a través de plataformas de e-commerce, email marketing y publicidad
+                    digital. Ese recorrido me fue llevando cada vez más hacia el <span
+                        class="highlighted"
+                        >desarrollo web y la optimización de procesos</span
+                    >, integrando la parte técnica con la estrategia.
+                </p>
+                <p>
+                    Actualmente sigo en marketing, pero con un enfoque más
+                    orientado a <span class="highlighted"
+                        >AI y ventas high ticket</span
+                    >, creando soluciones a través de software. Hoy me siento
+                    preparado para dar el paso y <span class="highlighted"
+                        >enfocarme de lleno en el desarrollo</span
+                    >, aportando desde lo técnico y creciendo como developer.
+                </p>
+                <p>
+                    Si llegaste hasta aquí, gracias por visitar mi portafolio y
+                    conocer un poco sobre mi camino. Te dejo mis redes, email y
+                    WhatsApp por si quieres contactarme.
+                </p>
+            </div>
+
+            <div>
+                <Social />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .title-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .title-section span {
+        display: flex;
+        align-items: center;
+    }
+
+    .photo-about {
+        max-width: 280px;
+        border: solid 0.5rem var(--bg-secondary);
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .bio-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-decription-text p {
+        font-size: var(--text-base);
+        line-height: 1.6; /* Lectura más cómoda */
+        margin-bottom: 1.2rem;
+    }
+
+    .u-link {
+        text-decoration: underline;
+        color: var(--accent-primary);
+    }
+
+    @media (min-width: 768px) {
+        .bio-about {
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .photo-about {
+            order: 2;
+            max-width: 330px;
+        }
+
+        .photo-about:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .about-description {
+            flex: 1; /* El texto ocupa el espacio restante */
+        }
+    }
+</style>

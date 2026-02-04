@@ -13,9 +13,6 @@
         <li class="nav-item">
             <a href="#" class="nav-link">Sobre mí</a>
         </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Blog</a>
-        </li>
     </ul>
 </nav>
 
@@ -23,26 +20,18 @@
     .nav-list {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        gap: 0.5rem;
+        gap: 0.6rem;
         padding: 0.7rem 1rem;
         margin: 0;
         list-style: none;
+        width: 100%;
     }
 
     .nav-item {
         background: var(--bg-secondary, #1a1a1a);
         border: 1px solid rgba(255, 255, 255, 0.03);
-        border-radius: 10px;
-        box-shadow:
-            0 4px 6px -1px rgba(0, 0, 0, 0.5),
-            0 10px 15px -3px rgba(0, 0, 0, 0.4);
-    }
-
-    .nav-item:hover {
-        background: var(--bg-elevated, #252525);
-        box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.6);
-        border-color: rgba(255, 255, 255, 0.1);
+        border-radius: calc(infinity * 1px);
+        box-shadow: var(--box-shadow);
     }
 
     .nav-link {
@@ -52,13 +41,16 @@
         font-weight: 500;
         font-size: 1rem;
         color: var(--text-primary);
+        text-align: center; /* Centra el texto para que todos se vean uniformes */
     }
 
     @media (min-width: 768px) {
         .nav-list {
             flex-direction: row;
+            align-items: center; /* Alineación horizontal en desktop */
             gap: 1rem;
             padding: 0.3rem 1rem;
+            width: auto;
         }
 
         .nav-item {
@@ -66,7 +58,7 @@
             border: none;
             box-shadow: none;
             border-radius: 0;
-            border-bottom: 2px solid transparent; /* Borde invisible para reservar el espacio */
+            border-bottom: 2px solid transparent;
             transition: border-color 0.3s ease;
         }
 
@@ -77,6 +69,7 @@
         .nav-link {
             padding: 0;
             font-size: 0.85rem;
+            text-align: left; /* Reset del centrado para desktop */
         }
     }
 </style>

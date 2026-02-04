@@ -12,6 +12,7 @@
     --text-secondary: #525252;
     --text-disabled: #9ca3af;
     --border-color: rgba(0, 0, 0, 0.08);
+    --box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.4);
     --icon-filter: invert(1);
     /* Tipografía */
     --font-family: 'Onest', sans-serif;
@@ -44,12 +45,14 @@ html.dark {
     --text-secondary: #a3a3a3;
     --text-disabled: #525252;
     --border-color: rgba(255, 255, 255, 0.05);
+    --box-shadow: 0 4px 15px -5px rgba(138, 138, 138, 0.4);
     --icon-filter: invert(0);
 }
 
 /* Aplicar filtros a los iconos */
 .nav-logo-img img,
-.social-link img {
+.social-link img,
+.title-section img {
     filter: var(--icon-filter);
     transition: filter 0.3s ease;
 }
@@ -68,13 +71,6 @@ body {
     /* Suaviza el cambio de tema */
 }
 
-p {
-    font-size: var(--text-base);
-    /* Corregido a base para lectura normal */
-    line-height: 1.6;
-    color: var(--text-secondary);
-    /* Los párrafos suelen ir mejor con secondary */
-}
 
 h1,
 h2,
@@ -82,6 +78,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-size: var(--text-3xl);
     color: var(--text-primary);
     line-height: 1.2;
 }
@@ -94,6 +91,17 @@ a {
 
 ul {
     list-style: none;
+}
+
+p {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.highlighted {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
 }
 
 .container {
