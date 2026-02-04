@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Bio from "../components/Bio.astro";
+import Exp from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 
 const pageTitle = "Portfolio de Felipe Lopez";
 ---
@@ -9,6 +11,8 @@ const pageTitle = "Portfolio de Felipe Lopez";
 <Layout pageTitle={pageTitle}>
     <main>
         <About />
+        <Exp />
+        <Projects />
         <Bio />
     </main>
 </Layout>

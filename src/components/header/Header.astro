@@ -163,6 +163,15 @@ import logoIcon from "../../assets/logo.svg";
         menu?.classList.toggle("is-active");
     });
 
+    // Cerrar el menú al hacer clic en un enlace (móvil)
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            navWrapper?.classList.remove("show");
+            menu?.classList.remove("is-active");
+        });
+    });
+
     // Función para manejar el estado del fondo
     const handleHeaderScroll = () => {
         if (window.scrollY > 0) {

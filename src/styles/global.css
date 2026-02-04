@@ -34,6 +34,12 @@
     --text-5xl: 3rem;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+    /*dejar espacio al hacer clic en un elemento del van que dirije hacia su seccion*/
+}
+
 html.dark {
     --bg-primary: #0a0a0a;
     --bg-secondary: #171717;
@@ -51,8 +57,7 @@ html.dark {
 
 /* Aplicar filtros a los iconos */
 .nav-logo-img img,
-.social-link img,
-.title-section img {
+.social-link img {
     filter: var(--icon-filter);
     transition: filter 0.3s ease;
 }

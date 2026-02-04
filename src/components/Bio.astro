@@ -6,7 +6,7 @@ import aboutImage from "../assets/me-2.jpg";
 const edad = new Date().getFullYear() - 2001;
 ---
 
-<section id="bio" class="container">
+<section id="about" class="bio container">
     <h2 class="title-section">
         <span>
             <img src={iconBio.src} alt="Bio" width="32" height="32" />
@@ -14,11 +14,11 @@ const edad = new Date().getFullYear() - 2001;
         Sobre mí
     </h2>
 
-    <div class="bio-about">
-        <img src={aboutImage.src} alt="photo-about" class="photo-about" />
+    <div class="bio__wrapper">
+        <img src={aboutImage.src} alt="Felipe Lopez" class="bio__image" />
 
-        <div class="about-description">
-            <div class="about-decription-text">
+        <div class="bio__content">
+            <div class="bio__text">
                 <p>
                     Me llamo <span class="highlighted"
                         >Felipe Antonio López</span
@@ -40,7 +40,8 @@ const edad = new Date().getFullYear() - 2001;
                     Luego entré al mundo del marketing, trabajando en <span
                         class="highlighted"
                         >estrategias de ventas, funnels y automatización</span
-                    > a través de plataformas de e-commerce, email marketing y publicidad
+                    >
+                    a través de plataformas de e-commerce, email marketing y publicidad
                     digital. Ese recorrido me fue llevando cada vez más hacia el <span
                         class="highlighted"
                         >desarrollo web y la optimización de procesos</span
@@ -57,12 +58,12 @@ const edad = new Date().getFullYear() - 2001;
                 </p>
                 <p>
                     Si llegaste hasta aquí, gracias por visitar mi portafolio y
-                    conocer un poco sobre mi camino. Te dejo mis redes, email y
-                    WhatsApp por si quieres contactarme.
+                    conocer un poco sobre mi camino. Te dejo mis redes y email
+                    por si quieres contactarme.
                 </p>
             </div>
 
-            <div>
+            <div class="bio__social">
                 <Social />
             </div>
         </div>
@@ -82,24 +83,34 @@ const edad = new Date().getFullYear() - 2001;
         align-items: center;
     }
 
-    .photo-about {
-        max-width: 280px;
-        border: solid 0.5rem var(--bg-secondary);
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-    }
-
-    .bio-about {
+    .bio__wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
     }
 
-    .about-decription-text p {
+    .bio__image {
+        max-width: 220px;
+        border: solid 0.5rem var(--bg-secondary);
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .bio__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bio__text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bio__text p {
         font-size: var(--text-base);
-        line-height: 1.6; /* Lectura más cómoda */
-        margin-bottom: 1.2rem;
     }
 
     .u-link {
@@ -108,23 +119,19 @@ const edad = new Date().getFullYear() - 2001;
     }
 
     @media (min-width: 768px) {
-        .bio-about {
+        .bio__wrapper {
             flex-direction: row;
             align-items: center;
-            gap: 4rem;
+            gap: 2rem;
         }
 
-        .photo-about {
+        .bio__image {
+            max-width: 300px;
             order: 2;
-            max-width: 330px;
         }
 
-        .photo-about:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-
-        .about-description {
-            flex: 1; /* El texto ocupa el espacio restante */
+        .bio__content {
+            flex: 1;
         }
     }
 </style>
