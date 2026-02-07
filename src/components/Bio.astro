@@ -1,21 +1,19 @@
 ---
 import Social from "./Social.astro";
+import SectionTitle from "./SectionTitle.astro";
 import iconBio from "../assets/icon-bio.svg";
 import aboutImage from "../assets/me-2.jpg";
 
 const edad = new Date().getFullYear() - 2001;
 ---
 
-<section id="about" class="bio container">
-    <h2 class="title-section">
-        <span>
-            <img src={iconBio.src} alt="Bio" width="32" height="32" />
-        </span>
-        Sobre mí
-    </h2>
+<section id="about" class="bio container" aria-labelledby="bio-title">
+    <SectionTitle id="bio-title" iconSrc={iconBio.src} iconAlt="Bio" title="Sobre mí" />
 
     <div class="bio__wrapper">
-        <img src={aboutImage.src} alt="Felipe Lopez" class="bio__image" />
+        <figure class="bio__figure">
+            <img src={aboutImage.src} alt="Felipe Lopez" class="bio__image" width="300" height="300" />
+        </figure>
 
         <div class="bio__content">
             <div class="bio__text">
@@ -71,18 +69,6 @@ const edad = new Date().getFullYear() - 2001;
 </section>
 
 <style>
-    .title-section {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .title-section span {
-        display: flex;
-        align-items: center;
-    }
-
     .bio__wrapper {
         display: flex;
         flex-direction: column;
@@ -90,11 +76,23 @@ const edad = new Date().getFullYear() - 2001;
         gap: 2rem;
     }
 
-    .bio__image {
-        max-width: 220px;
-        border: solid 0.5rem var(--bg-secondary);
+    .bio__figure {
+        margin: 0;
+        flex-shrink: 0;
+        width: 220px;
+        height: 220px;
         border-radius: 12px;
+        overflow: hidden;
+        border: solid 0.5rem var(--bg-secondary);
         box-shadow: var(--box-shadow);
+    }
+
+    .bio__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
     }
 
     .bio__content {
@@ -125,13 +123,17 @@ const edad = new Date().getFullYear() - 2001;
             gap: 2rem;
         }
 
-        .bio__image {
-            max-width: 300px;
-            order: 2;
+        .bio__content {
+            order: 1;
+            flex: 1;
+            min-width: 0;
         }
 
-        .bio__content {
-            flex: 1;
+        .bio__figure {
+            order: 2;
+            width: 300px;
+            height: 300px;
+            min-width: 300px;
         }
     }
 </style>

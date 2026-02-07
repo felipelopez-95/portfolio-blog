@@ -1,0 +1,31 @@
+---
+export interface Props {
+    iconSrc: string;
+    iconAlt: string;
+    title: string;
+    id?: string;
+}
+
+const { iconSrc, iconAlt, title, id } = Astro.props;
+---
+
+<h2 id={id} class="section-title">
+    <span>
+        <img src={iconSrc} alt={iconAlt} width="32" height="32" />
+    </span>
+    {title}
+</h2>
+
+<style>
+    .section-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title span {
+        display: flex;
+        align-items: center;
+    }
+</style>

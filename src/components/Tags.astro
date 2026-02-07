@@ -1,0 +1,59 @@
+---
+export interface Props {
+    tags: Array<{
+        iconSrc: string;
+        label: string;
+        alt?: string;
+    }>;
+}
+
+const { tags } = Astro.props;
+---
+
+<ul class="tags">
+    {
+        tags.map(({ iconSrc, label, alt }) => (
+            <li class="tag">
+                <span>
+                    <img src={iconSrc} alt={alt ?? label} width="18" height="18" />
+                </span>
+                {label}
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    .tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0.35rem 0.75rem;
+        border-radius: 2rem;
+        background-color: var(--bg-secondary);
+        box-shadow: var(--box-shadow);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--text-primary);
+    }
+
+    .tag span {
+        display: flex;
+        align-items: center;
+    }
+
+    .tag img {
+        flex-shrink: 0;
+    }
+</style>

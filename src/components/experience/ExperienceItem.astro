@@ -1,0 +1,91 @@
+---
+import Tags from "../Tags.astro";
+
+export interface Props {
+    company: string;
+    role: string;
+    date: string;
+    location: string;
+    description: string;
+    tags: Array<{
+        iconSrc: string;
+        label: string;
+        alt?: string;
+    }>;
+}
+
+const { company, role, date, location, description, tags } = Astro.props;
+---
+
+<article class="experience__item">
+    <header class="experience__info">
+        <h3 class="experience__company">{company}</h3>
+        <p class="experience__role">{role}</p>
+        <p class="experience__date"><time>{date}</time></p>
+        <p class="experience__location">{location}</p>
+    </header>
+
+    <section class="experience__description" aria-label="Descripción del puesto">
+        <p class="experience__text">
+            {description}
+        </p>
+        <Tags tags={tags} />
+    </section>
+</article>
+
+<style>
+    .experience__item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experience__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .experience__company {
+        font-size: var(--text-2xl);
+        color: var(--accent-primary);
+        margin: 0;
+    }
+
+    .experience__role {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .experience__date,
+    .experience__location {
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+    }
+
+    .experience__description {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .experience__text {
+        font-size: var(--text-base);
+        line-height: 1.6;
+        color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+        .experience__item {
+            grid-template-columns: 220px 1fr;
+            gap: 3rem;
+        }
+
+        .experience__info {
+            text-align: right;
+            border-right: 2px solid var(--border-color);
+            padding-right: 2rem;
+        }
+    }
+</style>

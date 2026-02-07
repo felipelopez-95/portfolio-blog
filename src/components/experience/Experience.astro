@@ -1,0 +1,34 @@
+---
+import iconExp from "../../assets/icon-experience.svg";
+import excelIcon from "../../assets/tech/excel.svg";
+import SectionTitle from "../SectionTitle.astro";
+import ExperienceItem from "./ExperienceItem.astro";
+---
+
+<section id="experience" class="experience container" aria-labelledby="experience-title">
+    <SectionTitle id="experience-title" iconSrc={iconExp.src} iconAlt="Experiencia" title="Experiencia laboral" />
+
+    <ol class="experience__list">
+        <li>
+            <ExperienceItem
+            company="Claro Colombia"
+            role="Práctica empresarial"
+            date="nov. 2019 - sept. 2020"
+            location="Bogotá, Colombia"
+            description="Apoyo en el área IT durante el periodo de prácticas, obteniendo una visión clara de los procesos tecnológicos en una empresa de gran escala."
+            tags={[{ iconSrc: excelIcon.src, label: "Excel" }]}
+        />
+        </li>
+    </ol>
+</section>
+
+<style>
+    .experience__list {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>
