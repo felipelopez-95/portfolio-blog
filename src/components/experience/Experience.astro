@@ -1,6 +1,17 @@
 ---
 import iconExp from "../../assets/icon-experience.svg";
 import excelIcon from "../../assets/tech/excel.svg";
+import lookerIcon from "../../assets/tech/looker.svg";
+import powerBiIcon from "../../assets/tech/powerbi.svg";
+import n8nIcon from "../../assets/tech/n8n.svg";
+import pythonIcon from "../../assets/tech/python.svg";
+import htmlIcon from "../../assets/tech/html.svg";
+import cssIcon from "../../assets/tech/css.svg";
+import jsIcon from "../../assets/tech/javascript.svg";
+import twIcon from "../../assets/tech/tailwindcss.svg";
+import reactIcon from "../../assets/tech/react.svg";
+import astroIcon from "../../assets/tech/astrojs.svg";
+import lovableIcon from "../../assets/tech/lovable.svg";
 import SectionTitle from "../SectionTitle.astro";
 import ExperienceItem from "./ExperienceItem.astro";
 ---
@@ -8,18 +19,38 @@ import ExperienceItem from "./ExperienceItem.astro";
 <section id="experience" class="experience container" aria-labelledby="experience-title">
     <SectionTitle id="experience-title" iconSrc={iconExp.src} iconAlt="Experiencia" title="Experiencia laboral" />
 
-    <ol class="experience__list">
+    <ul class="experience__list">
+        <li>
+            <ExperienceItem
+            company="Un Día Menos"
+            role="Líder de plataformas y analíticas & AI Innovator"
+            date="Mar 2025 - Ene 2026"
+            location="México | Remoto"
+            description="Desarrollé e integré automatizaciones con n8n y Python, construí interfaces frontend para landing pages, y optimicé flujos de datos, métricas y CRM, incorporando soluciones basadas en IA para procesos internos y productos digitales."
+            tags={[{ iconSrc: excelIcon.src, label: "Excel" }, { iconSrc: n8nIcon.src, label: "n8n" }, { iconSrc: pythonIcon.src, label: "Python" }, { iconSrc: htmlIcon.src, label: "HTML" }, { iconSrc: cssIcon.src, label: "CSS" },{ iconSrc: jsIcon.src, label: "JavaScript" }, { iconSrc: twIcon.src, label: "Tailwind CSS" }, { iconSrc: reactIcon.src, label: "React" }, { iconSrc: astroIcon.src, label: "Astro" }, { iconSrc: lovableIcon.src, label: "Lovable" }, { iconSrc: powerBiIcon.src, label: "Power BI" }]}
+        />
+        </li>
+        <li>
+            <ExperienceItem
+            company="Black Digital"
+            role="Líder de plataformas y analíticas"
+            date="Nov 2023 - Jul 2025"
+            location="Colombia | Remoto"
+            description="Participé en la definición y ejecución de estrategias de marketing digital, enfocadas en embudos de conversión, email marketing y campañas publicitarias, realizando análisis de métricas y apoyando la gestión de clientes y CRM para optimizar el rendimiento comercial."
+            tags={[{ iconSrc: excelIcon.src, label: "Excel" }, { iconSrc: lookerIcon.src, label: "Looker" }]}
+        />
+        </li>
         <li>
             <ExperienceItem
             company="Claro Colombia"
             role="Práctica empresarial"
-            date="nov. 2019 - sept. 2020"
-            location="Bogotá, Colombia"
-            description="Apoyo en el área IT durante el periodo de prácticas, obteniendo una visión clara de los procesos tecnológicos en una empresa de gran escala."
+            date="Nov 2019 - Sep 2020"
+            location="Bogotá, Colombia | Remoto"
+            description="Desempeñé funciones de atención y soporte a empleados, gestionando roles y registros internos, y brindé apoyo al área de IT durante el periodo de prácticas, adquiriendo una visión integral de los procesos tecnológicos en una empresa de gran escala."
             tags={[{ iconSrc: excelIcon.src, label: "Excel" }]}
         />
         </li>
-    </ol>
+    </ul>
 </section>
 
 <style>

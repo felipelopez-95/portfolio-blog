@@ -71,15 +71,13 @@ const { company, role, date, location, description, tags } = Astro.props;
     }
 
     .experience__text {
-        font-size: var(--text-base);
-        line-height: 1.6;
-        color: var(--text-secondary);
+        line-height: 1.5;
+        margin: 0;
     }
 
     @media (min-width: 768px) {
         .experience__item {
             grid-template-columns: 220px 1fr;
-            gap: 3rem;
         }
 
         .experience__info {
